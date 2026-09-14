@@ -1,0 +1,22 @@
+name: confido_take_home
+
+profile: default
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  confido_take_home:
+    +schema: raw
+
+models:
+  confido_take_home:
+    +static_analysis: strict
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

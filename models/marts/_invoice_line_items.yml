@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: invoice_line_items
+    description: >
+      Invoice line items enriched with Confido product and global customer information where available
+
+    columns:
+      - name: invoice_id
+        description: Identifier for the invoice associated with the line item
+        data_tests:
+          - not_null
+
+      - name: invoice_created_at
+        description: Timestamp when the invoice was created
+
+      - name: invoice_currency
+        description: Currency associated with the invoice
+
+      - name: company_detail_id
+        description: Identifier for the company detail associated with the invoice
+
+      - name: company_detail_name
+        description: Name of the company detail associated with the invoice
+
+      - name: global_customer_id
+        description: >
+          Confido internal global customer identifier, where the invoice customer can be deterministically mapped to a global customer
+
+      - name: global_customer_name
+        description: Name of the mapped Confido global customer
+
+      - name: invoice_line_item_id
+        description: Unique identifier for the invoice line item
+        data_tests:
+          - not_null
+          - unique
+
+      - name: invoice_item_name
+        description: Name of the external invoice item associated with the line item
+
+      - name: product_id
+        description: >
+          Confido internal product identifier, populated only when the external invoice item maps unambiguously to a single Confido product
+
+      - name: product_name
+        description: Name of the mapped Confido product
+
+      - name: invoice_line_item_amount
+        description: Amount of the invoice line item in the invoice currency
+        data_tests:
+          - not_null

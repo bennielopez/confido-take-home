@@ -1,0 +1,18 @@
+# dbt generated files
+target/
+dbt_packages/
+logs/
+
+# Local environment
+.venv/
+.env
+
+# Credentials
+profiles.yml
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+dbt_internal_packages/

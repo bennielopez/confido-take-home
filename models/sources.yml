@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: confido_demo
+    database: confido_demo
+    schema: public
+    tables:
+      - name: invoices
+      - name: invoice_items
+      - name: items
+      - name: products
+      - name: contacts
+      - name: global_customers
+      - name: company_details
