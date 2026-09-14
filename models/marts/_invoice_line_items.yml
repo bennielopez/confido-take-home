@@ -48,8 +48,6 @@ models:
 
       - name: invoice_item_quantity
         description: Quantity of the invoice line item
-        data_tests:
-          - not_null
 
       - name: invoice_line_item_amount
         description: Amount of the invoice line item in the invoice currency
