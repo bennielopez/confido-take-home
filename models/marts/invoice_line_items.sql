@@ -52,6 +52,7 @@ invoice_line_items as (
         item.name as invoice_item_name,
         product.product_id,
         product.product_name,
+        invoice_item.quantity as invoice_item_quantity,
         invoice_item.total_amount as invoice_line_item_amount
 
     from {{ source('confido_demo', 'invoice_items') }} invoice_item
@@ -79,5 +80,6 @@ select
     invoice_item_name,
     product_id,
     product_name,
+    invoice_item_quantity,
     invoice_line_item_amount
 from invoice_line_items
